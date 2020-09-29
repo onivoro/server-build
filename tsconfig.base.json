@@ -1,0 +1,62 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@onivoro/agnostic-ackerman-system": [
+        "libs/agnostic/ackerman-system/src/index.ts"
+      ],
+      "@onivoro/agnostic-common": ["libs/agnostic/common/src/index.ts"],
+      "@onivoro/angular-diagrams": ["libs/angular/diagrams/src/index.ts"],
+      "@onivoro/browser-forms": ["libs/browser/forms/src/index.ts"],
+      "@onivoro/browser-generic-form": [
+        "libs/browser/generic-form/src/index.ts"
+      ],
+      "@onivoro/browser-navbar": ["libs/browser/navbar/src/index.ts"],
+      "@onivoro/browser-testing": ["libs/browser/testing/src/index.ts"],
+      "@onivoro/browser-vscode": ["libs/browser/vscode/src/index.ts"],
+      "@onivoro/server-app-vscx": ["libs/server/app-vscx/src/index.ts"],
+      "@onivoro/server-build": ["libs/server/build/src/index.ts"],
+      "@onivoro/server-database": ["libs/server/database/src/index.ts"],
+      "@onivoro/server-disk": ["libs/server/disk/src/index.ts"],
+      "@onivoro/server-elastic-search": [
+        "libs/server/elastic-search/src/index.ts"
+      ],
+      "@onivoro/server-event-sourcing": [
+        "libs/server/event-sourcing/src/index.ts"
+      ],
+      "@onivoro/server-git": ["libs/server/git/src/index.ts"],
+      "@onivoro/server-gitgrok": ["libs/server/gitgrok/src/index.ts"],
+      "@onivoro/server-parameterization": [
+        "libs/server/parameterization/src/index.ts"
+      ],
+      "@onivoro/server-pdf": ["libs/server/pdf/src/index.ts"],
+      "@onivoro/server-process": ["libs/server/process/src/index.ts"],
+      "@onivoro/server-vscode": ["libs/server/vscode/src/index.ts"],
+      "@onivoro/browser-tenancy": ["libs/browser/tenancy/src/index.ts"],
+      "@onivoro/agnostic-terraform-interfaces": [
+        "libs/agnostic/terraform-interfaces/src/index.ts"
+      ],
+      "@onivoro/agnostic/diagram-interfaces": [
+        "libs/agnostic/diagram-interfaces/src/index.ts"
+      ],
+      "@onivoro/server-kafka": ["libs/server/kafka/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
