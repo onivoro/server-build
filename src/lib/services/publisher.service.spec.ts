@@ -36,7 +36,7 @@ describe(PublisherService.name, () => {
             ]
         }).compile();
 
-        subject = moduleRef.get<PublisherService>(PublisherService);
+        subject = moduleRef.createNestApplication().get<PublisherService>(PublisherService);
     });
 
     describe('publishProject', () => {

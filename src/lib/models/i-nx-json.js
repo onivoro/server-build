@@ -1,2 +1,2 @@
-"use strict";
-exports.__esModule = true;
+export {};
+//# sourceMappingURL=i-nx-json.js.map
