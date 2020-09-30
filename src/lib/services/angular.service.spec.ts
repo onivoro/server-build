@@ -1,7 +1,7 @@
 import { AngularJsonPath } from '../env/angular-json-path';
 import { AngularService } from './angular.service';
 
-describe(AngularService.name, () => {
+xdescribe(AngularService.name, () => {
     let subject: AngularService;
     let pathToJson: AngularJsonPath;
 
