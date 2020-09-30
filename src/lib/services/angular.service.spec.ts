@@ -7,7 +7,6 @@ describe(AngularService.name, () => {
 
     beforeAll(() => {
         pathToJson = new AngularJsonPath();
-        pathToJson.value = '/Users/lee.norris/github.com/onivoro/oni/angular.json';
         subject = new AngularService(pathToJson);
     });
 

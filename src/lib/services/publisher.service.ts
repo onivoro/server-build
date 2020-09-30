@@ -1,5 +1,4 @@
 // tslint:disable:no-console
-import { Injectable } from '@nestjs/common';
 import { execRx } from '@onivoro/server-process';
 import { resolve } from 'path';
 import { of } from 'rxjs';
@@ -9,7 +8,6 @@ import { AngularService } from './angular.service';
 import { OniService } from './oni.service';
 import { UtilService } from './util.service';
 
-@Injectable()
 export class PublisherService {
     constructor(
         private readonly angularSvc: AngularService,

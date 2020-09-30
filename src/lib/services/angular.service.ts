@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common';
 import { readFileRx } from '@onivoro/server-disk';
 import { execRx } from '@onivoro/server-process';
 import { resolve } from 'path';
@@ -6,17 +5,14 @@ import { Observable, of } from 'rxjs';
 import { catchError, concatMap, filter, last, map, shareReplay } from 'rxjs/operators';
 import { AngularJsonPath } from '../env/angular-json-path';
 import { IAngularProject } from '../models/i-angular-project';
-// import { ArchitectBuildTemplatePipe } from '../templates/architect-build-template.pipe';
 
-@Injectable()
 export class AngularService {
     constructor(
-        private readonly angularJsonPath: AngularJsonPath,
-        // private readonly architectBuildTemplate: ArchitectBuildTemplatePipe,
+        private readonly angularJsonPath: AngularJsonPath
     ) { }
 
     getAngularJson() {
-        return of(resolve(process.cwd(), this.angularJsonPath.value as string))
+        return of(resolve(process.cwd(), this.angularJsonPath.value() as string))
             .pipe(
                 concatMap(where => readFileRx(where)),
                 map(contents => JSON.parse(contents as string)),

@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common';
 import { readObjectRx, writeObjectRx } from '@onivoro/server-disk';
 import { resolve } from 'path';
 import { of } from 'rxjs';
@@ -6,7 +5,6 @@ import { catchError, concatMap, map } from 'rxjs/operators';
 import { OniJsonPath } from '../env/oni-json-path';
 import { PackageJsonTemplatePipe } from '../templates/package-json-template.pipe';
 
-@Injectable()
 export class OniService {
     constructor(
         private readonly oniJsonPath: OniJsonPath,
@@ -20,7 +18,7 @@ export class OniService {
     }
 
     readOniJson() {
-        return readObjectRx(resolve(process.cwd(), this.oniJsonPath.value));
+        return readObjectRx(resolve(process.cwd(), this.oniJsonPath.value()));
     }
 
     readProject(name: string) {
@@ -43,7 +41,7 @@ export class OniService {
     }
 
     writeOniJson(json: object) {
-        return writeObjectRx(resolve(process.cwd(), this.oniJsonPath.value), json);
+        return writeObjectRx(resolve(process.cwd(), this.oniJsonPath.value()), json);
     }
 
     writePackageJsonVersion(packageJsonPath: string, version: string): any {
