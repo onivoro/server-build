@@ -1,12 +1,10 @@
 {
   "name": "@onivoro/server-build",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "url": "https://github.com/onivoro/server-build.git"
   },
-  "bin": {
-
-  },
+  "bin": {},
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
