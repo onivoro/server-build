@@ -7,7 +7,6 @@ export class S3PublisherService {
 
         const cmd = [
             `${program} s3 rm ${target} --recursive `,
-            `NODE_ENV=production nx build --prod pdf-browser `,
             `${program} s3 cp ${sourcePath} ${target} --acl public-read --recursive`
         ].join(' && ')
 
