@@ -11,6 +11,7 @@ export { AngularService } from './lib/services/angular.service';
 export { NxService } from './lib/services/nx.service';
 export { OniService } from './lib/services/oni.service';
 export { PublisherService } from './lib/services/publisher.service';
+export { S3PublisherService } from './lib/services/s3-publisher.service';
 export { UtilService } from './lib/services/util.service';
 
 export { ArchitectBuildTemplatePipe } from './lib/templates/architect-build-template.pipe';
