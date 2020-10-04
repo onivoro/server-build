@@ -8,10 +8,11 @@ export { INxJson } from './lib/models/i-nx-json';
 export { IOniJson } from './lib/models/i-oni-json';
 
 export { AngularService } from './lib/services/angular.service';
+export { AwsService } from './lib/services/aws.service';
 export { NxService } from './lib/services/nx.service';
 export { OniService } from './lib/services/oni.service';
 export { PublisherService } from './lib/services/publisher.service';
-export { S3PublisherService } from './lib/services/s3-publisher.service';
+export { S3Service } from './lib/services/s3.service';
 export { UtilService } from './lib/services/util.service';
 
 export { ArchitectBuildTemplatePipe } from './lib/templates/architect-build-template.pipe';
