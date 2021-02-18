@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@onivoro/server-disk": "latest",
-    "@onivoro/server-parameterization": "latest",
+    "@onivoro/server-parameterization": "^0.6.0",
     "@onivoro/server-process": "latest",
     "minimist": "^1.2.5",
     "rxjs": "^6.6.3"

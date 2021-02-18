@@ -1,5 +1,5 @@
-import { Env } from '@onivoro/server-parameterization';
+import { Env, Parameter } from '@onivoro/server-parameterization';
 
-export class AngularJsonPath extends Env<string> {
-    id = () => 'angularJsonPath'
+@Env(String, 'ANGULAR_JSON_PATH')
+export class AngularJsonPath extends Parameter<string> {
 }

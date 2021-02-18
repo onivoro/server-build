@@ -1,3 +1,6 @@
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
 export class ArchitectBuildTemplatePipe {
     transform({ name }: { name: string }) {
         const [root, ...parts] = name.split('-');

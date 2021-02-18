@@ -1,5 +1,5 @@
-import { Env } from '@onivoro/server-parameterization';
+import { Env, Parameter } from '@onivoro/server-parameterization';
 
-export class NxJsonPath extends Env<string> {
-    id = () => 'nxJsonPath'
+@Env(String, 'NX_JSON_PATH')
+export class NxJsonPath extends Parameter<string> {
 }
