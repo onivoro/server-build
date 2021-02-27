@@ -8,7 +8,7 @@ import { AngularService } from '../service/angular.service';
 import { NxService } from '../service/nx.service';
 import { OniService } from '../service/oni.service';
 import { PublisherService } from '../service/publisher.service';
-import { S3Service } from '../service/s3.service';
+// import { S3Service } from '../service/s3.service'; // w/ awsservice
 import { UtilService } from '../service/util.service';
 
 const paths = [
@@ -23,7 +23,6 @@ const providers = [
     NxService,
     OniService,
     PublisherService,
-    S3Service,
     UtilService,
 ];
 @Module({
