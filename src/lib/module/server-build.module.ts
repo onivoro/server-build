@@ -10,6 +10,8 @@ import { OniService } from '../service/oni.service';
 import { PublisherService } from '../service/publisher.service';
 // import { S3Service } from '../service/s3.service'; // w/ awsservice
 import { UtilService } from '../service/util.service';
+import { ArchitectBuildTemplatePipe } from '../templates/architect-build-template.pipe';
+import { PackageJsonTemplatePipe } from '../templates/package-json-template.pipe';
 
 const paths = [
     AngularJsonPath,
@@ -17,8 +19,14 @@ const paths = [
     OniJsonPath
 ];
 
+const pipes = [
+    ArchitectBuildTemplatePipe,
+    PackageJsonTemplatePipe
+];
+
 const providers = [
     ...paths,
+    ...pipes,
     AngularService,
     NxService,
     OniService,
