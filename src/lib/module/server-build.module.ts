@@ -4,7 +4,7 @@ import { NxJsonPath } from '../env/nx-json-path';
 import { OniJsonPath } from '../env/oni-json-path';
 
 import { AngularService } from '../service/angular.service';
-import { AwsService } from '../service/aws.service';
+// import { AwsService } from '../service/aws.service'; // make separate module
 import { NxService } from '../service/nx.service';
 import { OniService } from '../service/oni.service';
 import { PublisherService } from '../service/publisher.service';
@@ -20,7 +20,6 @@ const paths = [
 const providers = [
     ...paths,
     AngularService,
-    AwsService,
     NxService,
     OniService,
     PublisherService,
