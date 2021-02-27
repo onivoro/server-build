@@ -20,3 +20,5 @@ export { UtilService } from './lib/service/util.service';
 
 export { ArchitectBuildTemplatePipe } from './lib/templates/architect-build-template.pipe';
 export { PackageJsonTemplatePipe } from './lib/templates/package-json-template.pipe';
+
+export { ServerBuildModule } from './lib/module/server-build.module';
