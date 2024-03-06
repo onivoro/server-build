@@ -1,24 +1,46 @@
-export { AngularJsonPath } from './lib/env/angular-json-path';
-export { NxJsonPath } from './lib/env/nx-json-path';
-export { OniJsonPath } from './lib/env/oni-json-path';
+export * from './lib/commands/abstract-app.command';
+export * from './lib/commands/abstract-aws-app.command';
+export * from './lib/commands/abstract-aws-ecs.command';
+export * from './lib/commands/abstract-aws-lambda.command';
+export * from './lib/commands/abstract-aws.command';
+export * from './lib/commands/abstract.command';
+export * from './lib/commands/delete-lambda.command';
+export * from './lib/commands/deploy-image.command';
+export * from './lib/commands/deploy-lambda.command';
+export * from './lib/commands/kill-tasks.command';
+export * from './lib/commands/openapi-gen.command';
+export * from './lib/commands/reddeploy-lambda.command';
 
-export { PackageJsonModel } from './lib/model/package-json.model';
-export { ProjectModel } from './lib/model/project.model';
+export * from './lib/functions/add-cdn-prefix-to-key.function';
+export * from './lib/functions/build-app.function';
+export * from './lib/functions/build-image.function';
+export * from './lib/functions/copy-package-json-version.function';
+export * from './lib/functions/deploy-lambda.function';
+export * from './lib/functions/extract-asset-list.function';
+export * from './lib/functions/get-apps.function';
+export * from './lib/functions/get-bootstrap-script-body.function';
+export * from './lib/functions/get-projects.function';
+export * from './lib/functions/log-elapsed-time.function';
+export * from './lib/functions/login-to-ecr-by-profile.function';
+export * from './lib/functions/login-to-ecr.function';
+export * from './lib/functions/parse-docker-image-path.function';
+export * from './lib/functions/push-image-to-ecr.function';
+export * from './lib/functions/shell.function';
+export * from './lib/functions/stop-all-tasks.function';
+export * from './lib/functions/strip-new-lines.function';
+export * from './lib/functions/to-cdn-path.function';
+export * from './lib/functions/zip-directory.function';
 
-export { IAngularJson } from './lib/models/i-angular-json';
-export { IAngularProject } from './lib/models/i-angular-project';
-export { INxJson } from './lib/models/i-nx-json';
-export { IOniJson } from './lib/models/i-oni-json';
+export * from './lib/services/build-embedded.service';
 
-export { AngularService } from './lib/service/angular.service';
-export { AwsService } from './lib/service/aws.service';
-export { NxService } from './lib/service/nx.service';
-export { OniService } from './lib/service/oni.service';
-export { PublisherService } from './lib/service/publisher.service';
-export { S3Service } from './lib/service/s3.service';
-export { UtilService } from './lib/service/util.service';
+export * from './lib/types/app-params.interface';
+export * from './lib/types/aws-app-params.interface';
+export * from './lib/types/aws-ecs-params.interface';
+export * from './lib/types/aws-lambda-config-params.interface';
+export * from './lib/types/aws-lambda-params.interface';
+export * from './lib/types/aws-params.interface';
+export * from './lib/types/embedded-app-build-input.interface';
+export * from './lib/types/embedded-app-build-output.interface';
 
-export { ArchitectBuildTemplatePipe } from './lib/templates/architect-build-template.pipe';
-export { PackageJsonTemplatePipe } from './lib/templates/package-json-template.pipe';
-
-export { ServerBuildModule } from './lib/module/server-build.module';
+export * from './lib/server-build.module';
+export * from './lib/server-build-with-s3.module';

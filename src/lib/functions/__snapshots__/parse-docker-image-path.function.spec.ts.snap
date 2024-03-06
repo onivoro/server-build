@@ -1,0 +1,17 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseDockerImagePath GIVEN the tag is present returns repo, tag, and the combination thereof 1`] = `
+{
+  "repo": "314218077608.dkr.ecr.us-east-2.amazonaws.com/evolve",
+  "repoColonTag": "314218077608.dkr.ecr.us-east-2.amazonaws.com/evolve:api-account",
+  "tag": "api-account",
+}
+`;
+
+exports[`parseDockerImagePath GIVEN the tag is absent returns repo 1`] = `
+{
+  "repo": "314218077608.dkr.ecr.us-east-2.amazonaws.com/evolve",
+  "repoColonTag": undefined,
+  "tag": undefined,
+}
+`;

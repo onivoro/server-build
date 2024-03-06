@@ -1,30 +1,48 @@
 {
-  "name": "@onivoro/server-build",
-  "version": "0.15.0",
-  "repository": {
-    "url": "https://github.com/onivoro/server-build.git"
-  },
-  "bin": {
-    "onibuildng": ""
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "tsc -p tsconfig.json",
-    "release": "rm -rf dist && npm run build && npm version minor && cp package.json dist && cd dist && npm publish --access public"
-  },
-  "devDependencies": {
-    "@types/jest": "^26.0.14",
-    "@types/minimist": "^1.2.0",
-    "@types/node": "^14.11.2",
-    "jest": "^26.4.2",
-    "ts-jest": "^26.4.1",
-    "typescript": "^4.0.3"
-  },
-  "dependencies": {
-    "@onivoro/server-disk": "latest",
-    "@onivoro/server-parameterization": "^0.6.0",
-    "@onivoro/server-process": "latest",
-    "minimist": "^1.2.5",
-    "rxjs": "^6.6.3"
-  }
+    "name": "@onivoro/server-build",
+    "version": "18.0.0",
+    "repository": {
+        "url": "git+https://github.com/onivoro/server-build.git"
+    },
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "files": [
+        "dist/*"
+    ],
+    "scripts": {
+        "onx": "onx",
+        "build": "onx Build",
+        "deploy": "onx Publish",
+        "test": "onx Test",
+        "update": "onx Update"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js",
+            "default": "./dist/esm/lib.js"
+        }
+    },
+    "onx": {
+        "platform": "server",
+        "module": "commonjs"
+    },
+    "devDependencies": {
+        "@onivoro/cli": "*",
+        "@types/jest": "*",
+        "@types/node": "18.19.1",
+        "typescript": "*"
+    },
+    "engines": {
+        "node": "18.19.1",
+        "npm": "10.2.4"
+    },
+    "dependencies": {
+        "@nestjs/common": "^10.3.3",
+        "@onivoro/server-aws-s3": "^0.0.12",
+        "@onivoro/server-common": "^0.1.0",
+        "nest-commander": "^3.12.5"
+    }
 }
