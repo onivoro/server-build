@@ -1,6 +1,6 @@
 {
     "name": "@onivoro/server-build",
-    "version": "18.0.1",
+    "version": "18.0.2",
     "repository": {
         "url": "git+https://github.com/onivoro/server-build.git"
     },
@@ -43,6 +43,7 @@
         "@nestjs/common": "^10.3.3",
         "@onivoro/server-aws-s3": "^0.0.12",
         "@onivoro/server-common": "^0.1.0",
+        "adm-zip": "^0.5.10",
         "nest-commander": "^3.12.5"
     }
 }
