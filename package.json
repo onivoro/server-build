@@ -42,7 +42,7 @@
     "dependencies": {
         "@nestjs/common": "^10.3.3",
         "@onivoro/server-aws-s3": "^0.0.12",
-        "@onivoro/server-common": "^0.1.0",
+        "@onivoro/server-common": "^0.1.1",
         "adm-zip": "^0.5.10",
         "nest-commander": "^3.12.5"
     }
