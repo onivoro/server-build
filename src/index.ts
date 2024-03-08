@@ -24,13 +24,15 @@ export * from './lib/functions/log-elapsed-time.function';
 export * from './lib/functions/login-to-ecr-by-profile.function';
 export * from './lib/functions/login-to-ecr.function';
 export * from './lib/functions/parse-docker-image-path.function';
-export * from './lib/functions/patch-nx-source-maps.function';
+export * from './lib/functions/patch-nx-source-map-paths.function';
 export * from './lib/functions/push-image-to-ecr.function';
 export * from './lib/functions/shell.function';
 export * from './lib/functions/stop-all-tasks.function';
 export * from './lib/functions/strip-new-lines.function';
 export * from './lib/functions/to-cdn-path.function';
 export * from './lib/functions/zip-directory.function';
+
+export * from './lib/plugins/patch-nx-source-maps.plugin';
 
 export * from './lib/services/build-embedded.service';
 
