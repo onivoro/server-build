@@ -24,6 +24,7 @@ export * from './lib/functions/log-elapsed-time.function';
 export * from './lib/functions/login-to-ecr-by-profile.function';
 export * from './lib/functions/login-to-ecr.function';
 export * from './lib/functions/parse-docker-image-path.function';
+export * from './lib/functions/patch-nx-source-maps.function';
 export * from './lib/functions/push-image-to-ecr.function';
 export * from './lib/functions/shell.function';
 export * from './lib/functions/stop-all-tasks.function';
