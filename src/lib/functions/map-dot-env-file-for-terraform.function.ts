@@ -3,9 +3,8 @@ import { readFile, writeFile } from 'fs/promises';
 
 const encoding = 'utf-8';
 
-export async function mapDotEnvFileForTerraform() {
+export async function mapDotEnvFileForTerraform(file: string) {
 
-    const [node, program, file] = process.argv;
     if (!file) {
         console.log(`mapDotEnvFileForTerraform => must pass file path`);
         return process.exit(1);
