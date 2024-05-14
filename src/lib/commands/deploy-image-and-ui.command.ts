@@ -56,4 +56,13 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
   parseUiDist(val?: string) {
     return val;
   }
+
+  @Option({
+    flags: '-f, --dockerfile [dockerfile]',
+    description: 'dockerfile path',
+    required: true
+  })
+  parseDockerfile(val?: string) {
+    return val;
+  }
 }
