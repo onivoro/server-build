@@ -9,7 +9,7 @@ import { parseDockerImagePath } from '../functions/parse-docker-image-path.funct
 import { buildImageUnopinionated } from '../functions/build-image-unopinionated.function';
 import { execSync } from 'child_process';
 
-type IParams = IAwsEcsParams & { uiName: string, uiDist: string, dockerfile: string }
+type IParams = IAwsEcsParams & { uiName: string, uiDist: string, dockerfile: string, dockerArg: string }
 
 @Command({ name: DeployImageAndUi.name })
 export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
@@ -33,7 +33,7 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
     }
 
     const { repo, repoColonTag } = parseDockerImagePath(ecr);
-    buildImageUnopinionated(app, repoColonTag, dockerfile);
+    buildImageUnopinionated(repoColonTag, dockerfile, `APP_DIST=./dist/${appRoot}`);
     loginToEcr(profile, region, repo);
     pushImageToEcr(repoColonTag);
     logElapsedTime(executionStart, DeployImageAndUi.name);
@@ -63,6 +63,15 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
     required: true
   })
   parseDockerfile(val?: string) {
+    return val;
+  }
+
+  @Option({
+    flags: '-g, --docker-arg [dockerArg]',
+    description: 'dockerfile arg... like "APP=blah"',
+    required: true
+  })
+  parseDockerArg(val?: string) {
     return val;
   }
 }

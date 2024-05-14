@@ -1,12 +1,12 @@
 import { shell } from './shell.function';
 
-export function buildImageUnopinionated(app: string, repoColonTag: string, dockerfile: string) {
+export function buildImageUnopinionated(repoColonTag: string, dockerfile: string, dockerArg: string) {
   shell(
     [
       'docker',
       'build',
       '--build-arg',
-      `APP=${app}`,
+      dockerArg,
       '-f',
       dockerfile,
       '-t',
