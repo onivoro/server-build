@@ -7,16 +7,18 @@ import { OpenapiGen } from './commands/openapi-gen.command';
 import { OpenapiGenV2 } from './commands/openapi-gen-v2.command';
 import { KillTasks } from './commands/kill-tasks.command';
 import { DeleteBuckets } from './commands/delete-buckets.command';
+import { DeployImageAndUi } from './commands/deploy-image-and-ui.command';
 
 export const providers = [
   DeployLambda,
   RedeployLambda,
   DeployImage,
+  DeployImageAndUi,
   DeleteBuckets,
   DeleteLambda,
   OpenapiGen,
   OpenapiGenV2,
-  KillTasks
+  KillTasks,
 ];
 
 @Module({

@@ -1,6 +1,6 @@
 {
     "name": "@onivoro/server-build",
-    "version": "18.0.6",
+    "version": "18.0.7",
     "repository": {
         "url": "git+https://github.com/onivoro/server-build.git"
     },
