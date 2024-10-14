@@ -16,15 +16,18 @@ export async function deployLambda(
     profile,
     role: lambdaRole,
     bucket,
+    target,
     source,
-    lambdaName: artifactName,
+    lambdaName,
     prefix } = params;
+
+  const artifactName = lambdaName || app;
   const srcFolderPath = source || ('apps/lambda/' + app.replace('lambda-', ''));
   const dist = `dist/${srcFolderPath}`;
   const zipFolderPath = 'zips/';
   const zip = `${zipFolderPath}${app}.zip`;
 
-  buildApp(app, 'production');
+  buildApp(app, target);
   spawnSync('npm', [`i`, '--force'], { ...opts, cwd: dist });
   shell(`mkdir -p ${zipFolderPath}`);
 

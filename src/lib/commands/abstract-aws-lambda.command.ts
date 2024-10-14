@@ -32,7 +32,7 @@ export abstract class AbstractAwsLambdaCommand<TParams extends IAwsAppParams> ex
   }
 
   @Option({
-    flags: '-o, --role [role]',
+    flags: '-l, --role [role]',
     description: 'ARN of lambda execution role',
     required: false
   })
@@ -50,7 +50,7 @@ export abstract class AbstractAwsLambdaCommand<TParams extends IAwsAppParams> ex
   }
 
   @Option({
-    flags: '-l, --lambdaName [lambdaName]',
+    flags: '-n, --lambdaName [lambdaName]',
     description: 'the actual name of the lambda function',
     required: false
   })

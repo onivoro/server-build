@@ -14,7 +14,7 @@ export class DeployLambda extends AbstractAwsLambdaCommand<IAwsLambdaConfigParam
     _args: string[],
     params: IAwsLambdaConfigParams
   ): Promise<void> {
-    buildApp(params.app, 'production');
+    buildApp(params.app, params.target);
     deployLambda(
       params,
       false,
