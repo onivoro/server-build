@@ -30,7 +30,7 @@
         "module": "commonjs"
     },
     "devDependencies": {
-        "@onivoro/cli": "^22.0.4",
+        "@onivoro/cli": "^22.0.8",
         "@types/jest": "*",
         "@types/node": "22.8.1",
         "typescript": "*"
@@ -41,8 +41,8 @@
     },
     "dependencies": {
         "@nestjs/common": "^10.4.6",
-        "@onivoro/server-aws-s3": "^22.0.1",
-        "@onivoro/server-common": "^22.0.1",
+        "@onivoro/server-aws-s3": "^22.0.2",
+        "@onivoro/server-common": "^22.0.3",
         "adm-zip": "^0.5.16",
         "nest-commander": "^3.15.0"
     }
