@@ -7,6 +7,8 @@ import { IEmbeddedAppBuildInput } from '../types/embedded-app-build-input.interf
 import { toCdnPath } from '../functions/to-cdn-path.function';
 import { buildApp } from '../functions/build-app.function';
 import { getBootstrapScriptBody } from '../functions/get-bootstrap-script-body.function';
+import { Readable } from 'node:stream';
+import { createReadStream } from 'node:fs';
 
 @Injectable()
 export class BuildEmbeddedService {
@@ -54,13 +56,13 @@ export class BuildEmbeddedService {
             await this.s3Svc.upload({
                 Bucket: bucket,
                 ContentType: contentType,
-                Body: await readFile(`${assetRoot}/${original}`, 'utf-8'),
+                Body: createReadStream(`${assetRoot}/${original}`, 'utf-8'),
                 Key: key,
                 ACL
             })
         ));
 
-        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: getBootstrapScriptBody(region, bucket, app), Key: `${app}/${bootstrapScriptName}.js`, ACL });
+        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: Readable.from(getBootstrapScriptBody(region, bucket, app)), Key: `${app}/${bootstrapScriptName}.js`, ACL });
 
         return { app, html, fileMappings };
     }

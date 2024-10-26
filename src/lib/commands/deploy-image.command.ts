@@ -36,9 +36,9 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
       }
     }
     const { repo, repoColonTag } = parseDockerImagePath(ecr);
-    buildImage(app, repoColonTag, appRoot);
+    buildImage(app, repoColonTag || ecr, appRoot);
     loginToEcr(profile, region, repo);
-    pushImageToEcr(repoColonTag);
+    pushImageToEcr(repoColonTag || ecr);
     logElapsedTime(executionStart, DeployImage.name);
   }
 }

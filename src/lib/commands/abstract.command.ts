@@ -1,7 +1,7 @@
 import { CommandRunner } from 'nest-commander';
 import { logElapsedTime } from '../functions/log-elapsed-time.function';
 
-export abstract class AbstractCommand<TParams> extends CommandRunner {
+export abstract class AbstractCommand<TParams extends Record<string, any>> extends CommandRunner {
   abstract main(args: string[], params: TParams): Promise<void>;
 
   constructor(public name: string) {

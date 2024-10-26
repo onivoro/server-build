@@ -8,6 +8,7 @@ import { AbstractAwsEcsCommand } from './abstract-aws-ecs.command';
 import { parseDockerImagePath } from '../functions/parse-docker-image-path.function';
 import { buildImageUnopinionated } from '../functions/build-image-unopinionated.function';
 import { execSync } from 'child_process';
+import { BadRequestException } from '@nestjs/common';
 
 type IParams = IAwsEcsParams & { uiName: string, uiDist: string, dockerfile: string, dockerArg: string }
 
@@ -33,6 +34,11 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
     }
 
     const { repo, repoColonTag } = parseDockerImagePath(ecr);
+
+    if (typeof repoColonTag === 'undefined') {
+      throw new BadRequestException(`expected ecr format "repo:tag" but received "${ecr}`)
+    }
+
     buildImageUnopinionated(repoColonTag, dockerfile, `APP_DIST=./dist/${appRoot}`);
     loginToEcr(profile, region, repo);
     pushImageToEcr(repoColonTag);
