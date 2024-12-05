@@ -26,11 +26,13 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
 
     buildApp(app, 'production');
 
-    try {
-      buildApp(uiName, target as any);
-      execSync(`cp -R ${uiDist} dist/${appRoot}/assets/ui`);
-    } catch (e) {
-      console.log(e);
+    if(uiName) {
+      try {
+        buildApp(uiName, target as any);
+        execSync(`cp -R ${uiDist} dist/${appRoot}/assets/ui`);
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     const { repo, repoColonTag } = parseDockerImagePath(ecr);
@@ -48,7 +50,7 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
   @Option({
     flags: '-u, --ui-name [uiName]',
     description: 'NX ui app name (found in project.json)',
-    required: true
+    required: false
   })
   parseUiName(val?: string) {
     return val;
