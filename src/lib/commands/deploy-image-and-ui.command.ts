@@ -10,7 +10,7 @@ import { buildImageUnopinionated } from '../functions/build-image-unopinionated.
 import { execSync } from 'child_process';
 import { BadRequestException } from '@nestjs/common';
 
-type IParams = IAwsEcsParams & { uiName: string, uiDist: string, dockerfile: string, dockerArg: string }
+type IParams = IAwsEcsParams & { uiName?: string, uiDist?: string, dockerfile: string, dockerArg: string }
 
 @Command({ name: DeployImageAndUi.name })
 export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
@@ -59,7 +59,7 @@ export class DeployImageAndUi extends AbstractAwsEcsCommand<IParams> {
   @Option({
     flags: '-d, --ui-dist [uiDist]',
     description: 'NX ui app dist folder (found in project.json or vite config)',
-    required: true
+    required: false
   })
   parseUiDist(val?: string) {
     return val;
